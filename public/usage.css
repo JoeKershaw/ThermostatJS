@@ -1,0 +1,25 @@
+.low-usage {
+  width: 100px;
+  margin: 100px auto;
+  font-size: 400%;
+  color: green;
+}
+
+.medium-usage {
+  width: 100px;
+  margin: 100px auto;
+  font-size: 400%;
+  color: black;
+}
+
+.high-usage {
+  width: 100px;
+  margin: 100px auto;
+  font-size: 400%;
+  color: red;
+}
+
+.form-group {
+  display: inline-block;
+  clear: left;
+}

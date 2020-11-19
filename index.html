@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+      <div id="temperature"></div>
+      <div>
+        Power Saving Mode: <span id="power-saving"></span>
+      </div>
+
+      <section class="form-group">
+        <button id="up">+</button>
+        <button id="down">-</button>
+        <button id="reset">Reset</button>
+        <button id="powersaving-on">Power Save On</button>
+        <button id="powersaving-off">Power Save Off</button>
+      </section>
+
+    <section>
+      <h1>It is currently <span id= "current-temperature"></span> degrees in <span id= "location"></span></h1>
+      <form id="select-city">
+        <input id="current-city" type="text" placeholder="Enter a city"></input>
+        <input type="submit"></input>
+      </form>
+    </section>
+
+    <script type="text/javascript" src="jasmine-standalone-3/src/thermostatController.js"></script>
+    <script type="text/javascript" src="jasmine-standalone-3/src/thermostatView.js"></script>
+    <script type="text/javascript" src="jasmine-standalone-3/src/thermostat.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="interface.js"></script>
+    <link rel="stylesheet" href="./public/usage.css">
+
+  </body>
+</html>
