@@ -41,5 +41,16 @@
     function updateDisplay() {
       $('#temperature').text(thermostat.temperature);
       $('#temperature').attr('class', thermostat.usage());
-    }
+      $.ajax({
+             type: "POST",
+             url: "http://localhost:4567/",
+             data: JSON.stringify(thermostat),
+             crossDomain: true,
+             dataType: "json",
+             success: function (data, status, jqXHR) {
+
+                 alert("success");
+             }
+           })
+         }
   });
