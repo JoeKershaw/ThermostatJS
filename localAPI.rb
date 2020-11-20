@@ -1,18 +1,24 @@
 require 'sinatra'
 require 'sinatra/json'
 
+
+class LocalAPI < Sinatra::Base
   enable :sessions
   set :session_secret, 'Here be Dragons'
 
 get '/' do
-  p json session[:text]
-  p session[:word]
+  erb :index
 end
 
-post '/', :provides => :json do
-    p params = JSON.parse(request.env["rack.input"].read)
-    p json text = params["temperature"]
+post '/data' do
+    params = JSON.parse(request.body.read)
+    text = params["temperature"]
     session[:text] = text
-    session[:word] = "Hello"
-  redirect ('/')
+end
+
+get '/data' do
+  json text: session[:text]
+end
+
+run! if app_file == $0
 end

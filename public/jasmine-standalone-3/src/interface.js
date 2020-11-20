@@ -1,6 +1,6 @@
   $(document).ready(function() {
     var thermostat = new Thermostat();
-    updateDisplay();
+    loadAPI();
 
     $('#select-city').submit(function(event) {
       event.preventDefault();
@@ -43,7 +43,7 @@
       $('#temperature').attr('class', thermostat.usage());
       $.ajax({
              type: "POST",
-             url: "http://localhost:4567/",
+             url: "http://localhost:9393/data",
              data: JSON.stringify(thermostat),
              crossDomain: true,
              dataType: "json",
@@ -53,4 +53,10 @@
              }
            })
          }
+    function loadAPI() {
+      $.get('http://localhost:9393/data', function(data) {
+        $('#temperature').text(data.text);
+        $('#temperature').attr('class', thermostat.usage());
+      });
+    }
   });
